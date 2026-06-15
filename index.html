@@ -15,7 +15,7 @@
       <span class="navbar__title">MeusFilmes</span>
     </div>
     <div class="navbar__search">
-      <input type="text" id="searchInput" placeholder="Pesquisar filmes..." />
+      <input type="text" id="searchInput" placeholder="Pesquisar filmes e séries..." />
       <button id="searchBtn" aria-label="Buscar">&#128269;</button>
     </div>
     <nav class="navbar__links">
@@ -48,17 +48,15 @@
     <div class="filters">
       <button class="filter-btn active" data-filter="all">Todos</button>
       <button class="filter-btn" data-filter="terror">Terror</button>
-      <button class="filter-btn" data-filter="acao">Ação</button>
-      <button class="filter-btn" data-filter="drama">Drama</button>
-      <button class="filter-btn" data-filter="ficcao">Ficção Científica</button>
+      <button class="filter-btn" data-filter="serie">Séries</button>
     </div>
 
     <!-- Grade de filmes -->
     <section class="section">
-      <h2 class="section__title">&#128247; Filmes em Destaque</h2>
+      <h2 class="section__title">&#128247; Filmes e Séries em Destaque</h2>
       <div class="grid" id="movieGrid">
 
-        <!-- Card 1 — It: A Coisa (com iframe) -->
+        <!-- Card 1 — It: A Coisa -->
         <article class="card" data-category="terror" data-id="it-a-coisa">
           <div class="card__thumb" onclick="openModal('it-a-coisa')">
             <iframe
@@ -126,13 +124,13 @@
           </div>
         </article>
 
-        <!-- Card 3 — O Iluminado -->
-        <article class="card" data-category="terror" data-id="o-iluminado">
-          <div class="card__thumb" onclick="openModal('o-iluminado')">
+        <!-- Card 3 — It: Bem-Vindos a Derry (Série) -->
+        <article class="card" data-category="serie" data-id="welcome-to-derry">
+          <div class="card__thumb" onclick="openModal('welcome-to-derry')">
             <iframe
               class="card__iframe"
-              src="https://www.youtube.com/embed/S014oGZiSdI"
-              title="O Iluminado — Trailer Oficial"
+              src="https://www.youtube.com/embed/S2pE9m65Z5A"
+              title="It: Welcome to Derry — Teaser Oficial"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -144,119 +142,17 @@
           </div>
           <div class="card__info">
             <div class="card__meta">
-              <span class="card__badge card__badge--terror">Terror</span>
-              <span class="card__year">1980</span>
-              <span class="card__rating">&#11088; 8.4</span>
+              <span class="card__badge card__badge--serie">Série</span>
+              <span class="card__year">2025</span>
+              <span class="card__rating">&#11088; Pendente</span>
             </div>
-            <h3 class="card__title">O Iluminado</h3>
+            <h3 class="card__title">It: Bem-Vindos a Derry</h3>
             <p class="card__desc">
-              Um escritor aceita um emprego de zelador em um hotel isolado durante o inverno
-              e começa a enlouquecer sob influências sobrenaturais.
+              Ambientada na década de 1960, a série explora as origens de Pennywise e os eventos
+              que levaram à maldição da cidade de Derry muito antes do Clube dos Perdedores.
             </p>
             <div class="card__actions">
-              <button class="btn btn--sm btn--primary" onclick="openModal('o-iluminado')">&#9654; Assistir</button>
-              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 4 — Vingadores: Ultimato -->
-        <article class="card" data-category="acao" data-id="vingadores-ultimato">
-          <div class="card__thumb" onclick="openModal('vingadores-ultimato')">
-            <iframe
-              class="card__iframe"
-              src="https://www.youtube.com/embed/TcMBFSGVi1c"
-              title="Vingadores: Ultimato — Trailer Oficial"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-            <div class="card__play-overlay">
-              <span class="card__play-icon">&#9654;</span>
-            </div>
-          </div>
-          <div class="card__info">
-            <div class="card__meta">
-              <span class="card__badge card__badge--acao">Ação</span>
-              <span class="card__year">2019</span>
-              <span class="card__rating">&#11088; 8.4</span>
-            </div>
-            <h3 class="card__title">Vingadores: Ultimato</h3>
-            <p class="card__desc">
-              Os heróis sobreviventes se unem em uma missão desesperada para reverter
-              os efeitos do estalo de Thanos e restaurar o universo.
-            </p>
-            <div class="card__actions">
-              <button class="btn btn--sm btn--primary" onclick="openModal('vingadores-ultimato')">&#9654; Assistir</button>
-              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 5 — Interestelar -->
-        <article class="card" data-category="ficcao" data-id="interestelar">
-          <div class="card__thumb" onclick="openModal('interestelar')">
-            <iframe
-              class="card__iframe"
-              src="https://www.youtube.com/embed/zSWdZVtXT7E"
-              title="Interestelar — Trailer Oficial"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-            <div class="card__play-overlay">
-              <span class="card__play-icon">&#9654;</span>
-            </div>
-          </div>
-          <div class="card__info">
-            <div class="card__meta">
-              <span class="card__badge card__badge--ficcao">Ficção</span>
-              <span class="card__year">2014</span>
-              <span class="card__rating">&#11088; 8.7</span>
-            </div>
-            <h3 class="card__title">Interestelar</h3>
-            <p class="card__desc">
-              Um grupo de astronautas viaja através de um buraco de minhoca em busca
-              de um novo lar para a humanidade enquanto a Terra se torna inabitável.
-            </p>
-            <div class="card__actions">
-              <button class="btn btn--sm btn--primary" onclick="openModal('interestelar')">&#9654; Assistir</button>
-              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 6 — O Poderoso Chefão -->
-        <article class="card" data-category="drama" data-id="o-poderoso-chefao">
-          <div class="card__thumb" onclick="openModal('o-poderoso-chefao')">
-            <iframe
-              class="card__iframe"
-              src="https://www.youtube.com/embed/sY1S34973zA"
-              title="O Poderoso Chefão — Trailer Oficial"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-            <div class="card__play-overlay">
-              <span class="card__play-icon">&#9654;</span>
-            </div>
-          </div>
-          <div class="card__info">
-            <div class="card__meta">
-              <span class="card__badge card__badge--drama">Drama</span>
-              <span class="card__year">1972</span>
-              <span class="card__rating">&#11088; 9.2</span>
-            </div>
-            <h3 class="card__title">O Poderoso Chefão</h3>
-            <p class="card__desc">
-              A saga épica da família Corleone, uma das mais poderosas famílias da máfia
-              americana, e a transição de poder entre gerações.
-            </p>
-            <div class="card__actions">
-              <button class="btn btn--sm btn--primary" onclick="openModal('o-poderoso-chefao')">&#9654; Assistir</button>
+              <button class="btn btn--sm btn--primary" onclick="openModal('welcome-to-derry')">&#9654; Assistir</button>
               <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
             </div>
           </div>

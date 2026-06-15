@@ -1,5 +1,5 @@
 /* ============================================================
-   DADOS DOS FILMES
+   DADOS DOS FILMES E SÉRIES
    ============================================================ */
 const movies = {
   'it-a-coisa': {
@@ -24,49 +24,16 @@ const movies = {
     description:
       'Vinte e sete anos depois dos eventos do primeiro filme, Os Perdedores retornam a Derry para enfrentar Pennywise uma última vez e cumprir a promessa feita na infância, desta vez como adultos com traumas e medos ainda mais profundos.',
   },
-  'o-iluminado': {
-    title: 'O Iluminado',
-    year: 1980,
-    rating: '8.4',
-    genre: 'Terror',
-    duration: '2h 26min',
-    director: 'Stanley Kubrick',
-    embedUrl: 'https://www.youtube.com/embed/S014oGZiSdI?autoplay=1',
+  'welcome-to-derry': {
+    title: 'It: Bem-Vindos a Derry',
+    year: 2025,
+    rating: 'Pendente',
+    genre: 'Série / Terror',
+    duration: '1ª Temporada',
+    director: 'Andy Muschietti (Produtor)',
+    embedUrl: 'https://www.youtube.com/embed/S2pE9m65Z5A?autoplay=1',
     description:
-      'Jack Torrance aceita um emprego de zelador no isolado Hotel Overlook durante o inverno. Enquanto a neve corta qualquer acesso ao mundo exterior, Jack começa a enlouquecer sob a influência de forças sobrenaturais que habitam o hotel.',
-  },
-  'vingadores-ultimato': {
-    title: 'Vingadores: Ultimato',
-    year: 2019,
-    rating: '8.4',
-    genre: 'Ação',
-    duration: '3h 01min',
-    director: 'Anthony e Joe Russo',
-    embedUrl: 'https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=1',
-    description:
-      'Após os eventos devastadores de Guerra Infinita, os heróis sobreviventes se unem em uma missão desesperada para reverter os efeitos do estalo de Thanos e restaurar o universo, viajando pelo tempo e enfrentando seus passados.',
-  },
-  'interestelar': {
-    title: 'Interestelar',
-    year: 2014,
-    rating: '8.7',
-    genre: 'Ficção Científica',
-    duration: '2h 49min',
-    director: 'Christopher Nolan',
-    embedUrl: 'https://www.youtube.com/embed/zSWdZVtXT7E?autoplay=1',
-    description:
-      'Com a Terra se tornando inabitável, um grupo de astronautas viaja através de um buraco de minhoca recém-descoberto em busca de um novo lar para a humanidade, explorando os limites da física, do tempo e do amor.',
-  },
-  'o-poderoso-chefao': {
-    title: 'O Poderoso Chefão',
-    year: 1972,
-    rating: '9.2',
-    genre: 'Drama',
-    duration: '2h 55min',
-    director: 'Francis Ford Coppola',
-    embedUrl: 'https://www.youtube.com/embed/sY1S34973zA?autoplay=1',
-    description:
-      'A saga épica da família Corleone, uma das mais poderosas famílias da máfia americana. Quando o patriarca Vito Corleone é baleado, seu filho mais novo Michael é arrastado para o mundo do crime organizado em uma jornada de poder e tragédia.',
+      'Explore as origens do palhaço Pennywise e o passado sombrio da cidade de Derry. Ambientada décadas antes dos filmes originais, esta série revela como o mal se estabeleceu na região e as primeiras vítimas da entidade.',
   },
 };
 
@@ -91,8 +58,8 @@ function openModal(id) {
       <span>&#127916; ${movie.genre}</span>
       <span>&#128197; ${movie.year}</span>
       <span>&#9200; ${movie.duration}</span>
-      <span>&#127775; ${movie.rating} / 10</span>
-      <span>&#127916; Dir. ${movie.director}</span>
+      <span>&#127775; ${movie.rating}</span>
+      <span>&#127916; ${movie.director}</span>
     </div>
     <p>${movie.description}</p>
   `;
@@ -203,8 +170,5 @@ style.textContent = `
   .card:nth-child(1) { animation-delay: 0.05s; }
   .card:nth-child(2) { animation-delay: 0.10s; }
   .card:nth-child(3) { animation-delay: 0.15s; }
-  .card:nth-child(4) { animation-delay: 0.20s; }
-  .card:nth-child(5) { animation-delay: 0.25s; }
-  .card:nth-child(6) { animation-delay: 0.30s; }
 `;
 document.head.appendChild(style);
