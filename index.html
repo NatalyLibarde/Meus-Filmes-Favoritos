@@ -15,7 +15,7 @@
       <span class="navbar__title">MeusFilmes</span>
     </div>
     <div class="navbar__search">
-      <input type="text" id="searchInput" placeholder="Pesquisar filmes e séries..." />
+      <input type="text" id="searchInput" placeholder="Pesquisar filmes..." />
       <button id="searchBtn" aria-label="Buscar">&#128269;</button>
     </div>
     <nav class="navbar__links">
@@ -48,12 +48,11 @@
     <div class="filters">
       <button class="filter-btn active" data-filter="all">Todos</button>
       <button class="filter-btn" data-filter="terror">Terror</button>
-      <button class="filter-btn" data-filter="serie">Séries</button>
     </div>
 
     <!-- Grade de filmes -->
     <section class="section">
-      <h2 class="section__title">&#128247; Filmes e Séries em Destaque</h2>
+      <h2 class="section__title">&#128247; Filmes em Destaque</h2>
       <div class="grid" id="movieGrid">
 
         <!-- Card 1 — It: A Coisa -->
@@ -119,40 +118,6 @@
             </p>
             <div class="card__actions">
               <button class="btn btn--sm btn--primary" onclick="openModal('it-capitulo-2')">&#9654; Assistir</button>
-              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 3 — It: Bem-Vindos a Derry (Série) -->
-        <article class="card" data-category="serie" data-id="welcome-to-derry">
-          <div class="card__thumb" onclick="openModal('welcome-to-derry')">
-            <iframe
-              class="card__iframe"
-              src="https://www.youtube.com/embed/S2pE9m65Z5A"
-              title="It: Welcome to Derry — Teaser Oficial"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-            <div class="card__play-overlay">
-              <span class="card__play-icon">&#9654;</span>
-            </div>
-          </div>
-          <div class="card__info">
-            <div class="card__meta">
-              <span class="card__badge card__badge--serie">Série</span>
-              <span class="card__year">2025</span>
-              <span class="card__rating">&#11088; Pendente</span>
-            </div>
-            <h3 class="card__title">It: Bem-Vindos a Derry</h3>
-            <p class="card__desc">
-              Ambientada na década de 1960, a série explora as origens de Pennywise e os eventos
-              que levaram à maldição da cidade de Derry muito antes do Clube dos Perdedores.
-            </p>
-            <div class="card__actions">
-              <button class="btn btn--sm btn--primary" onclick="openModal('welcome-to-derry')">&#9654; Assistir</button>
               <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
             </div>
           </div>

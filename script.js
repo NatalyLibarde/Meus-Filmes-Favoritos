@@ -1,5 +1,5 @@
 /* ============================================================
-   DADOS DOS FILMES E SÉRIES
+   DADOS DOS FILMES
    ============================================================ */
 const movies = {
   'it-a-coisa': {
@@ -24,17 +24,6 @@ const movies = {
     description:
       'Vinte e sete anos depois dos eventos do primeiro filme, Os Perdedores retornam a Derry para enfrentar Pennywise uma última vez e cumprir a promessa feita na infância, desta vez como adultos com traumas e medos ainda mais profundos.',
   },
-  'welcome-to-derry': {
-    title: 'It: Bem-Vindos a Derry',
-    year: 2025,
-    rating: 'Pendente',
-    genre: 'Série / Terror',
-    duration: '1ª Temporada',
-    director: 'Andy Muschietti (Produtor)',
-    embedUrl: 'https://www.youtube.com/embed/S2pE9m65Z5A?autoplay=1',
-    description:
-      'Explore as origens do palhaço Pennywise e o passado sombrio da cidade de Derry. Ambientada décadas antes dos filmes originais, esta série revela como o mal se estabeleceu na região e as primeiras vítimas da entidade.',
-  },
 };
 
 /* ============================================================
@@ -58,8 +47,8 @@ function openModal(id) {
       <span>&#127916; ${movie.genre}</span>
       <span>&#128197; ${movie.year}</span>
       <span>&#9200; ${movie.duration}</span>
-      <span>&#127775; ${movie.rating}</span>
-      <span>&#127916; ${movie.director}</span>
+      <span>&#127775; ${movie.rating} / 10</span>
+      <span>&#127916; Dir. ${movie.director}</span>
     </div>
     <p>${movie.description}</p>
   `;
@@ -169,6 +158,5 @@ style.textContent = `
   }
   .card:nth-child(1) { animation-delay: 0.05s; }
   .card:nth-child(2) { animation-delay: 0.10s; }
-  .card:nth-child(3) { animation-delay: 0.15s; }
 `;
 document.head.appendChild(style);
