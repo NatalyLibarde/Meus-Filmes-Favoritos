@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meus Filmes Favoritos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="navbar">
+    <div class="navbar__logo">
+      <span class="navbar__icon">&#9654;</span>
+      <span class="navbar__title">MeusFilmes</span>
+    </div>
+    <div class="navbar__search">
+      <input type="text" id="searchInput" placeholder="Pesquisar filmes..." />
+      <button id="searchBtn" aria-label="Buscar">&#128269;</button>
+    </div>
+    <nav class="navbar__links">
+      <a href="#" class="active">Início</a>
+      <a href="#">Tendências</a>
+      <a href="#">Favoritos</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO BANNER ===== -->
+  <section class="hero">
+    <div class="hero__overlay">
+      <span class="hero__badge">EM DESTAQUE</span>
+      <h1 class="hero__title">It: A Coisa</h1>
+      <p class="hero__desc">
+        Sete crianças conhecidas como "Os Perdedores" enfrentam seus maiores medos quando são
+        aterrorizadas por Pennywise, uma entidade demoníaca que assume a forma de um palhaço.
+      </p>
+      <div class="hero__actions">
+        <button class="btn btn--primary" onclick="openModal('it-a-coisa')">&#9654; Assistir Agora</button>
+        <button class="btn btn--secondary">+ Minha Lista</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main">
+
+    <!-- Filtros de categoria -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="terror">Terror</button>
+      <button class="filter-btn" data-filter="acao">Ação</button>
+      <button class="filter-btn" data-filter="drama">Drama</button>
+      <button class="filter-btn" data-filter="ficcao">Ficção Científica</button>
+    </div>
+
+    <!-- Grade de filmes -->
+    <section class="section">
+      <h2 class="section__title">&#128247; Filmes em Destaque</h2>
+      <div class="grid" id="movieGrid">
+
+        <!-- Card 1 — It: A Coisa (com iframe) -->
+        <article class="card" data-category="terror" data-id="it-a-coisa">
+          <div class="card__thumb" onclick="openModal('it-a-coisa')">
+            <iframe
+              class="card__iframe"
+              src="https://www.youtube.com/embed/xKJmEC5ieOk"
+              title="It: A Coisa — Trailer Oficial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <div class="card__play-overlay">
+              <span class="card__play-icon">&#9654;</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <div class="card__meta">
+              <span class="card__badge card__badge--terror">Terror</span>
+              <span class="card__year">2017</span>
+              <span class="card__rating">&#11088; 7.3</span>
+            </div>
+            <h3 class="card__title">It: A Coisa</h3>
+            <p class="card__desc">
+              Pennywise aterroriza a cidade de Derry, Maine, enquanto um grupo de crianças
+              decide enfrentar o mal que assombra sua cidade há décadas.
+            </p>
+            <div class="card__actions">
+              <button class="btn btn--sm btn--primary" onclick="openModal('it-a-coisa')">&#9654; Assistir</button>
+              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 — It: Capítulo 2 -->
+        <article class="card" data-category="terror" data-id="it-capitulo-2">
+          <div class="card__thumb" onclick="openModal('it-capitulo-2')">
+            <iframe
+              class="card__iframe"
+              src="https://www.youtube.com/embed/hZeFeYSmBcg"
+              title="It: Capítulo 2 — Trailer Oficial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <div class="card__play-overlay">
+              <span class="card__play-icon">&#9654;</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <div class="card__meta">
+              <span class="card__badge card__badge--terror">Terror</span>
+              <span class="card__year">2019</span>
+              <span class="card__rating">&#11088; 6.5</span>
+            </div>
+            <h3 class="card__title">It: Capítulo 2</h3>
+            <p class="card__desc">
+              Vinte e sete anos depois, Os Perdedores retornam a Derry para enfrentar
+              Pennywise uma última vez e cumprir a promessa feita na infância.
+            </p>
+            <div class="card__actions">
+              <button class="btn btn--sm btn--primary" onclick="openModal('it-capitulo-2')">&#9654; Assistir</button>
+              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 — O Iluminado -->
+        <article class="card" data-category="terror" data-id="o-iluminado">
+          <div class="card__thumb" onclick="openModal('o-iluminado')">
+            <iframe
+              class="card__iframe"
+              src="https://www.youtube.com/embed/S014oGZiSdI"
+              title="O Iluminado — Trailer Oficial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <div class="card__play-overlay">
+              <span class="card__play-icon">&#9654;</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <div class="card__meta">
+              <span class="card__badge card__badge--terror">Terror</span>
+              <span class="card__year">1980</span>
+              <span class="card__rating">&#11088; 8.4</span>
+            </div>
+            <h3 class="card__title">O Iluminado</h3>
+            <p class="card__desc">
+              Um escritor aceita um emprego de zelador em um hotel isolado durante o inverno
+              e começa a enlouquecer sob influências sobrenaturais.
+            </p>
+            <div class="card__actions">
+              <button class="btn btn--sm btn--primary" onclick="openModal('o-iluminado')">&#9654; Assistir</button>
+              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 — Vingadores: Ultimato -->
+        <article class="card" data-category="acao" data-id="vingadores-ultimato">
+          <div class="card__thumb" onclick="openModal('vingadores-ultimato')">
+            <iframe
+              class="card__iframe"
+              src="https://www.youtube.com/embed/TcMBFSGVi1c"
+              title="Vingadores: Ultimato — Trailer Oficial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <div class="card__play-overlay">
+              <span class="card__play-icon">&#9654;</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <div class="card__meta">
+              <span class="card__badge card__badge--acao">Ação</span>
+              <span class="card__year">2019</span>
+              <span class="card__rating">&#11088; 8.4</span>
+            </div>
+            <h3 class="card__title">Vingadores: Ultimato</h3>
+            <p class="card__desc">
+              Os heróis sobreviventes se unem em uma missão desesperada para reverter
+              os efeitos do estalo de Thanos e restaurar o universo.
+            </p>
+            <div class="card__actions">
+              <button class="btn btn--sm btn--primary" onclick="openModal('vingadores-ultimato')">&#9654; Assistir</button>
+              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 — Interestelar -->
+        <article class="card" data-category="ficcao" data-id="interestelar">
+          <div class="card__thumb" onclick="openModal('interestelar')">
+            <iframe
+              class="card__iframe"
+              src="https://www.youtube.com/embed/zSWdZVtXT7E"
+              title="Interestelar — Trailer Oficial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <div class="card__play-overlay">
+              <span class="card__play-icon">&#9654;</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <div class="card__meta">
+              <span class="card__badge card__badge--ficcao">Ficção</span>
+              <span class="card__year">2014</span>
+              <span class="card__rating">&#11088; 8.7</span>
+            </div>
+            <h3 class="card__title">Interestelar</h3>
+            <p class="card__desc">
+              Um grupo de astronautas viaja através de um buraco de minhoca em busca
+              de um novo lar para a humanidade enquanto a Terra se torna inabitável.
+            </p>
+            <div class="card__actions">
+              <button class="btn btn--sm btn--primary" onclick="openModal('interestelar')">&#9654; Assistir</button>
+              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 — O Poderoso Chefão -->
+        <article class="card" data-category="drama" data-id="o-poderoso-chefao">
+          <div class="card__thumb" onclick="openModal('o-poderoso-chefao')">
+            <iframe
+              class="card__iframe"
+              src="https://www.youtube.com/embed/sY1S34973zA"
+              title="O Poderoso Chefão — Trailer Oficial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <div class="card__play-overlay">
+              <span class="card__play-icon">&#9654;</span>
+            </div>
+          </div>
+          <div class="card__info">
+            <div class="card__meta">
+              <span class="card__badge card__badge--drama">Drama</span>
+              <span class="card__year">1972</span>
+              <span class="card__rating">&#11088; 9.2</span>
+            </div>
+            <h3 class="card__title">O Poderoso Chefão</h3>
+            <p class="card__desc">
+              A saga épica da família Corleone, uma das mais poderosas famílias da máfia
+              americana, e a transição de poder entre gerações.
+            </p>
+            <div class="card__actions">
+              <button class="btn btn--sm btn--primary" onclick="openModal('o-poderoso-chefao')">&#9654; Assistir</button>
+              <button class="btn btn--sm btn--ghost" onclick="toggleFavorite(this)">&#9825; Favoritar</button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /grid -->
+    </section>
+
+  </main>
+
+  <!-- ===== MODAL DE PLAYER ===== -->
+  <div class="modal" id="movieModal" role="dialog" aria-modal="true" aria-label="Player de filme">
+    <div class="modal__backdrop" onclick="closeModal()"></div>
+    <div class="modal__content">
+      <button class="modal__close" onclick="closeModal()" aria-label="Fechar">&#10005;</button>
+      <div class="modal__player">
+        <iframe
+          id="modalIframe"
+          src=""
+          title="Player de Filme"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="modal__details" id="modalDetails"></div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; 2025 MeusFilmes &mdash; Todos os direitos reservados.</p>
+    <p class="footer__note">Os trailers exibidos pertencem aos seus respectivos estúdios e distribuidoras.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
